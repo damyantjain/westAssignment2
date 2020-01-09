@@ -1,0 +1,24 @@
+﻿@model Demo.ViewModels.GroupIndexViewModel
+
+    <br/>
+<h2> Enter the Assignments you have completed.</h2>
+<br />
+    <form method="post" asp-controller="Group" asp-action="Create">
+        <div class="input-group">
+            <input asp-for="NewGroup.Name" type="text" class="form-control"/>
+            <span asp-validation-for="NewGroup.Name" class="text-danger"></span>
+            <input type="submit" value="Create" class="btn btn-primary"/>
+        </div>
+    </form>
+<br />
+<br />
+<h1>Assignments:</h1>
+<br />
+@foreach(var currentGroup in Model.Groups)
+{
+    <div class="row">
+        <span>@currentGroup.Name</span>
+    </div>
+}
+
+   
